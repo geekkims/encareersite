@@ -1,0 +1,115 @@
+{% load static %}
+<div class="navbar-area bg-f0f4fc">
+    <div class="mobile-responsive-nav">
+    <div class="container">
+    <div class="mobile-responsive-menu">
+    <div class="logo">
+    <a href="/">
+    <img src="{{logo_obj.background_image.url}}" class="main-logo" alt=""  style='max-width:80px'>
+    <img src="{{logo_obj.background_image.url}}" class="white-logo" alt=""  style='max-width:80px'>
+    </a>
+    </div>
+    </div>
+    </div>
+    </div>
+    <div class="desktop-nav">
+    <div class="container-fluid">
+    <nav class="navbar navbar-expand-md navbar-light">
+    <a class="navbar-brand" href="/">
+    <img src="{{logo_obj.background_image.url}}" class="main-logo" alt=""  style='max-width:80px'>
+    <img src="{{logo_obj.background_image.url}}" class="white-logo" alt=""  style='max-width:80px'>
+    </a>
+    <div class="collapse navbar-collapse mean-menu" id="navbarSupportedContent">
+    <ul class="navbar-nav me-auto">
+    <li class="nav-item">
+    <a href="/" >
+    Home
+    </a>
+    
+    <li class="nav-item">
+    <a href="{% url 'frontend:aboutpage' %}" >
+    About Us
+    </a>
+  
+    </li>
+    <li class="nav-item">
+    <a href="#" >
+    Find Jobs
+    </a>
+  
+    </li>
+
+
+    <!-- Services -->
+    <li class="nav-item">
+        <a href="#" class="nav-link dropdown-toggle">
+        Services
+        </a>
+        <ul class="dropdown-menu">
+        <li class="nav-item">
+        <a href="job-listing.html" class="nav-link">Services 1</a>
+        </li>
+        <li class="nav-item">
+        <a href="post-job.html" class="nav-link">Services 2</a>
+        </li>
+        <li class="nav-item">
+        <a href="job-details.html" class="nav-link">Services 3</a>
+        </li>
+        </ul>
+        </li>
+
+
+
+
+    <!-- End Of Services -->
+
+
+    <li class="nav-item">
+        <a href="#" >
+       News
+       </a>
+    
+       </li>
+    <li class="nav-item">
+    <a href="#" >
+    Contact Us
+    </a>
+  
+    </li>
+   
+    
+   
+    <div class="others-options">
+ 
+    </div>
+    </div>
+    </nav>
+    </div>
+    </div>
+    <div class="others-option-for-responsive">
+    <div class="container">
+    <div class="dot-menu">
+    <div class="inner">
+    <div class="circle circle-one"></div>
+    <div class="circle circle-two"></div>
+    <div class="circle circle-three"></div>
+    </div>
+    </div>
+    <div class="container">
+    <div class="option-inner">
+    <div class="others-options justify-content-center d-flex align-items-center">
+    <div class="others-options">
+    <div class="option-item">
+    <a href="login.html" class="default-btn btn style-2"><i class="fa-regular fa-user"></i> Login / Register</a>
+    </div>
+    <div class="option-item">
+    <a href="post-job.html" class="default-btn btn">Post New Job</a>
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    
