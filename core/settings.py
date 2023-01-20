@@ -24,6 +24,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    
     'authentication',
     'website',
     'ckeditor',
@@ -31,6 +32,7 @@ INSTALLED_APPS = [
     'user_visit',
     'jobapp',
     # 'debug_toolbar',
+    'django.contrib.humanize',
 
 
 ]
@@ -48,7 +50,8 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'user_visit.middleware.UserVisitMiddleware',   
+    'user_visit.middleware.UserVisitMiddleware', 
+    
     # 'debug_toolbar.middleware.DebugToolbarMiddleware',
 
 
@@ -67,6 +70,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                
             ],
         },
     },
@@ -130,7 +134,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'Africa/Nairobi'
 
 USE_I18N = True
 

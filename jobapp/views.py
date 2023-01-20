@@ -1,5 +1,7 @@
 from django.shortcuts import render
 from website.models import Mainlogo, Service
+from faker import Faker
+
 
 # Create your views here.
 def index(request):
@@ -14,3 +16,6 @@ def index(request):
 
     }
     return render(request,'jobapp/jobs.html',context)
+
+
+

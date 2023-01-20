@@ -6,9 +6,9 @@ from website.models import About, Mainlogo, Offer, Service
 def index(request):
     logo_obj= Mainlogo.objects.last() 
     offer_obj=Offer.objects.last()
-    services_obj=Service.objects.filter(is_active=True)
+    services_obj=Service.objects.filter(status=True)
     jobscount_obj=Job.objects.count()
-    jobs_obj=Job.objects.filter(is_closed=False).order_by('-created_date')
+    jobs_obj=Job.objects.filter(is_closed=False).order_by('-id')[:3]
 
     context={
 
@@ -16,6 +16,7 @@ def index(request):
         "services_obj":services_obj,
         "jobscount_obj":jobscount_obj,
         "jobs_obj":jobs_obj,
+        "offer_obj":offer_obj
 
     }
     return render(request,'jobapp/index.html',context)

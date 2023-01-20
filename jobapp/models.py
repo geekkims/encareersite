@@ -8,6 +8,8 @@ from django.core.validators import RegexValidator
 from datetime import datetime, timedelta
 from django.utils.text import slugify
 from django.db.models.signals import pre_save
+import os
+import uuid
 
 
 
@@ -106,20 +108,88 @@ COUNTY_CHOICES = (
 )
 
 
+COMPANY_INDUSTRY=(
+("IT", "Information Technology"),
+("FIN", "Finance"),
+("MAN", "Manufacturing"),
+("RET", "Retail"),
+("TRA", "Transportation"),
+("CON", "Construction"),
+("ENE", "Energy"),
+("HEA", "Healthcare"),
+("EDU", "Education"),
+("AGR", "Agriculture"),
+("GOV", "Government"),
+("TEL", "Telecommunications"),
+("ENT", "Entertainment"),
+("SER", "Service"),
+("TOU", "Tourism"),
+("MED", "Media"),
+("FOO", "Food"),
+("FAS", "Fashion"),
+("AUT", "Automotive"),
+("HOU", "Housing"),
+("MIN", "Mining"),
+("PET", "Petroleum"),
+("CHE", "Chemical"),
+("ENE", "Energy"),
+("INS", "Insurance"),
+("PRO", "Professional Services"),
+("COM", "Communications"),
+("LOG", "Logistics"),
+("MAR", "Marketing"),
+("PUB", "Publishing"),
+("TEC", "Technology"),
+("TRA", "Trade"),
+("WHO", "Wholesale"),
+("TRN", "Transportation")
+)
+
 JOB_TYPE = (
     ('Full Time', "Full time"),
     ('Part Time', "Part time"),
     ('Internship', "Internship"),
 )
 
+
+JOB_CATEGORIES = [
+    ('Information Technology', 'Information Technology'),
+    ('Human Resources', 'Human Resources'),
+    ('Marketing', 'Marketing'),
+    ('Finance', 'Finance'),
+    ('Operations', 'Operations'),
+    ('Sales', 'Sales'),
+    ('Management', 'Management'),
+    ('Teaching and Learning', 'Teaching and Learning'),
+    ('Engineering', 'Engineering'),
+    ('Medical and Health', 'Medical and Health'),
+    ('Science', 'Science'),
+    ('Art and Design', 'Art and Design'),
+    ('Legal', 'Legal'),
+    ('Transportation', 'Transportation'),
+    ('Construction', 'Construction'),
+    ('Cleaning', 'Cleaning'),
+    ('Agriculture', 'Agriculture'),
+    ('Food Service', 'Food Service'),
+    ('Other', 'Other')
+]
+
 class Category(models.Model):
-    name = models.CharField(max_length=50)
+    name = models.CharField(max_length=255, choices=JOB_CATEGORIES)
 
     def __str__(self):
         return self.name
     
 
+def upload_to(instance, filename):
+    ext = filename.split('.')[-1]
+    filename = f'{uuid.uuid4()}.{ext}'
+    return os.path.join('company-logo', filename)
 
+class Company(models.Model):
+    company_name=models.CharField(max_length=300)
+    company_logo=models.ImageField(upload_to=upload_to,help_text="1920x801 px image for fit background",null=True)
+    industry=models.CharField(max_length=255, choices=COMPANY_INDUSTRY)
 
 class Job(models.Model):
 
@@ -131,7 +201,8 @@ class Job(models.Model):
     location = models.CharField(max_length=30, choices=COUNTY_CHOICES, default='Nairobi')
     job_type = models.CharField(choices=JOB_TYPE, max_length=100)
     category = models.ForeignKey(Category,related_name='Category', on_delete=models.CASCADE)
-    salary = models.IntegerField(choices=SALARY_RANGE_CHOICES, default='Confidential')
+    company= models.ForeignKey(Company,related_name='Company',on_delete=models.CASCADE,default='',null=True)
+    salary = models.IntegerField(choices=SALARY_RANGE_CHOICES, default='10000')
     created_date=models.DateField(auto_now_add=True)
     last_date = models.DateField(default=(datetime.now() + timedelta(days=30)),help_text="By default its set after 30 days but this can be changed")
     is_published = models.BooleanField(default=True)
