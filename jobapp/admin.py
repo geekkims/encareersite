@@ -20,6 +20,7 @@ def add_slug_prefix(sender, instance, *args, **kwargs):
 
 class JobAdmin(admin.ModelAdmin):
     prepopulated_fields = {'slug': ('title',)}
+    list_display=('title','created_date','last_date','location','salary')
    
 
 

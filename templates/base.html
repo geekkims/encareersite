@@ -1,135 +1,235 @@
 {% load static %}
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="utf-8">
+  <title>Encareer | Empowering your workforce, enhancing your success</title>
 
-<link rel="stylesheet" href="{% static 'assets/css/bootstrap.min.css' %}">
+  <!-- Stylesheets -->
+  <link href="{% static 'css/bootstrap.css' %}" rel="stylesheet">
+  <link href="{% static 'css/style.css' %}" rel="stylesheet">
+  <link href="{% static 'css/custom.css' %}" rel="stylesheet">
+  <link href="{% static 'css/responsive.css' %}" rel="stylesheet">
 
-<link rel="stylesheet" href="{% static 'assets/css/meanmenu.css' %}">
+  <link rel="shortcut icon" href="{{logo_obj.background_image.url}}" type="image/x-icon">
+  <link rel="icon" href="{{logo_obj.background_image.url}}" type="image/x-icon">
 
-<link rel="stylesheet" href="{% static 'assets/css/owl.carousel.min.css' %}">
-
-<link rel="stylesheet" href="{% static 'assets/css/owl.theme.default.min.css' %}">
-
-<link rel="stylesheet" href="{% static 'assets/css/magnific-popup.css' %}">
-
-<link rel="stylesheet" href="{% static 'assets/css/flaticon.css' %}">
-
-<link rel="stylesheet" href="{% static 'assets/css/fontawesome.min.css' %}">
-
-<link rel="stylesheet" href="{% static 'assets/css/metismenu.min.css' %}">
-
-<link rel="stylesheet" href="{% static 'assets/css/simplebar.min.css' %}">
-
-<link rel="stylesheet" href="{% static 'assets/css/odometer.min.css' %}">
-
-<link rel="stylesheet" href="{% static 'assets/css/aos.css' %}">
-
-<link rel="stylesheet" href="{% static 'assets/css/style.css' %}">
-
-<link rel="stylesheet" href="{% static 'assets/css/dashboard.css' %}">
-
-<link rel="stylesheet" href="{% static 'assets/css/dark.css' %}">
-
-<link rel="stylesheet" href="{% static 'assets/css/responsive.css' %}">
-<title>Encareer Ventures - Job Board HTML Template</title>
-<link rel="icon" type="image/png" href="{{logo_obj.background_image.url}}">
+  <!-- Responsive -->
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+  <!--[if lt IE 9]><script src="{% static 'https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js' %}"></script><![endif]-->
+  <!--[if lt IE 9]><script src="{% static 'js/respond.js' %}"></script><![endif]-->
 </head>
-<body>
 
-<div id="preloader-section">
-<div id="preloader">
-<div id="ctn-preloader" class="ctn-preloader">
-<div class="animation-preloader">
+<body data-anm=".anm">
 
-<div class="spinner"></div>
+  <div class="page-wrapper">
 
-<div class="txt-loading">
-    <span data-text-preloader="." class="letters-loading">.</span>
-    <span data-text-preloader="." class="letters-loading">.</span>
-    <span data-text-preloader="." class="letters-loading">.</span>
-    <span data-text-preloader="." class="letters-loading">.</span>
-</div>
+    <!-- Preloader -->
+    <div class="preloader"></div>
 
-</div>
+    <!-- Header Span -->
+    <span class="header-span"></span>
 
-<div class="loader-section section-left"></div>
-<div class="loader-section section-right"></div>
-
-</div>
-</div>
-</div>
-{% include 'partials/header.html' %}
+    <!-- Main Header-->
+    <header class="main-header alternate -type-12">
+      <div class="auto-container">
+        <!-- Main box -->
+        <div class="main-box">
+          <!--Nav Outer -->
+          <div class="nav-outer">
+            <div class="logo-box">
+              <div class="logo"><a href="/"><img src="{{logo_obj.background_image.url}}" alt="" title=""></a></div>
+            </div>
+          </div>
 
 
+          <!-- My simple Navbar -->
 
-
-{% block content %}
-    
-{% endblock  %}
+          
 
 
 
 
-   {% include 'partials/footer.html' %}
-    
-    <div class="go-top">
-    <i class="fa-solid fa-arrow-up-long"></i>
-    <i class="fa-solid fa-arrow-up-long"></i>
-    </div>
-    
-    
-    <script data-cfasync="false" src="{% static '../../cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js' %}"></script><script src="{% static 'assets/js/jquery.min.js' %}"></script>
-    
-    <script src="{% static 'assets/js/bootstrap.bundle.min.js' %}"></script>
-    
-    <script src="{% static 'assets/js/jquery.meanmenu.js' %}"></script>
-    
-    <script src="{% static 'assets/js/owl.carousel.min.js' %}"></script>
-    
-    <script src="{% static 'assets/js/carousel-thumbs.min.js' %}"></script>
-    
-    <script src="{% static 'assets/js/jquery.magnific-popup.js' %}"></script>
-    
-    <script src="{% static 'assets/js/aos.js' %}"></script>
-    
-    <script src="{% static 'assets/js/mixitup.min.js' %}"></script>
-    
-    <script src="{% static 'assets/js/scrollmagic.min.js' %}"></script>
-    
-    <script src="{% static 'assets/js/animation.gsap.min.js' %}"></script>
-    
-    <script src="{% static 'assets/js/debug.addIndicators.min.js' %}"></script>
-    
-    <script src="{% static 'assets/js/tweenmax.min.js' %}"></script>
-    
-    <script src="{% static 'assets/js/progresscircle.min.js' %}"></script>
-    
-    <script src="{% static 'assets/js/jquery-ui.min.js' %}"></script>
-    
-    <script src="{% static 'assets/js/simplebar.min.js' %}"></script>
-    
-    <script src="{% static 'assets/js/metismenu.min.js' %}"></script>
-    
-    <script src="{% static 'assets/js/odometer.min.js' %}"></script>
-    
-    <script src="{% static 'assets/js/appear.min.js' %}"></script>
-    
-    <script src="{% static 'assets/js/form-validator.min.js' %}"></script>
-    
-    <script src="{% static 'assets/js/contact-form-script.js' %}"></script>
-    
-    <script src="{% static 'assets/js/ajaxchimp.min.js' %}"></script>
-    
-    <script src="{% static 'assets/js/custom.js' %}"></script>
-    </body>
-    
-    
-    </html>
+
+          <!-- End of my navbar -->
+
+          <div class="outer-box">
+            <nav class="nav main-menu">
+              <ul class="navigation" id="navbar">
+                <li> <a href="/">Home</a></li>
+              </ul>
+            </nav>
+
+            <!-- Login/Register -->
+            <div class="btn-box">
+              <a href="login-popup.html" class="theme-btn btn-style-three call-modal">Login / Register</a>
+              <a href="dashboard-post-job.html" class="theme-btn btn-style-one"><span class="btn-title">Job Post</span></a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Mobile Header -->
+      <div class="mobile-header">
+        <div class="logo"><a href="index.html"><img src="{{logo_obj.background_image.url}}" alt="" title=""></a></div>
+
+        <!--Nav Box-->
+        <div class="nav-outer clearfix">
+
+          <div class="outer-box">
+            <!-- Login/Register -->
+            <div class="login-box">
+              <a href="login-popup.html" class="call-modal"><span class="icon-user"></span></a>
+            </div>
+
+            <a href="#nav-mobile" class="mobile-nav-toggler navbar-trigger"><span class="flaticon-menu-1"></span></a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Mobile Nav -->
+      <div id="nav-mobile"></div>
+    </header>
+    <!--End Main Header -->
+
 
     
+    {% block content %}
         
-    
+    {% endblock content %}
+
+
+
+    <!-- Main Footer -->
+    <footer class="main-footer style-five">
+        <!--Widgets Section-->
+        <div class="widgets-section">
+          <div class="auto-container">
+  
+            <div class="row">
+              <div class="big-column col-xl-3 col-lg-3 col-md-12">
+                <div class="footer-column about-widget">
+                 
+                  <p class="phone-num"><span>About Us</span></p>
+                  <p>We provide comprehensive support for all of your human resource needs, promoting the importance of standard HR practices and going above and beyond to anticipate and meet the needs of our employees in order to maximize productivity.
+                </div>
+              </div>
+  
+              <div class="big-column col-xl-9 col-lg-9 col-md-12">
+                <div class="row">
+                  <div class="footer-column col-lg-3 col-md-6 col-sm-12">
+                    <div class="footer-widget links-widget">
+                      <h4 class="widget-title">Important Links</h4>
+                      <div class="widget-content">
+                        <ul class="list">
+                          <li><a href="#">About Us</a></li>
+                          <li><a href="#">Find Jobs</a></li>
+                          <li><a href="#">Contact Us</a></li>
+                          <li><a href="#">Our Blogs</a></li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+  
+                  <div class="footer-column col-lg-4 col-md-6 col-sm-12">
+                    <div class="footer-widget links-widget">
+                      <h4 class="widget-title">JOIN OUR MAILING LIST                    </h4>
+                      <div class="widget-content">
+                        {% comment %} Insert simple form {% endcomment %}
+                        
+
+                        <form>
+                          <div class="mb-3">
+                            <label for="email" class="form-label">Email address</label>
+                            <input type="email" class="form-control" id="email" aria-describedby="emailHelp">
+                            
+                          </div>
+                        
+                          <button type="submit" class="btn btn-primary">Subscribe</button>
+                        </form>
+
+
+
+
+
+
+
+
+
+                        {% comment %} End of the Form {% endcomment %}
+                      </div>
+                    </div>
+                  </div>
+  
+               
+                  <div class="footer-column col-lg-5 col-md-6 col-sm-12">
+                    <div class="footer-widget">
+                      <h4 class="widget-title">Our location</h4>
+                      <div class="widget-content">
+                        <div class="download-btns">
+                       {% comment %} Map {% endcomment %}
+
+                       <div class="mapouter"><div class="gmap_canvas"><iframe width="246" height="170" id="gmap_canvas" src="https://maps.google.com/maps?q=Shankardass%20house&t=k&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe><a href="https://www.whatismyip-address.com/divi-discount/">divi discount</a><br><style>.mapouter{position:relative;text-align:right;height:170px;width:246px;}</style><a href="https://www.embedgooglemap.net">make your own map google</a><style>.gmap_canvas {overflow:hidden;background:none!important;height:170px;width:246px;}</style></div></div>
+
+
+                       {% comment %} End Map {% endcomment %}
+
+
+
+
+
+
+
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+  
+  
+        <!--Bottom-->
+        <div class="footer-bottom">
+          <div class="auto-container">
+            <div class="outer-box">
+              <div class="copyright-text">© 2023 <a href="#">Career Ventures Limited</a>. All Right Reserved.</div>
+              <div class="social-links">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="scroll-to-top scroll-to-target" data-target="html"><span class="fa fa-angle-up"></span></div>
+      </footer>
+      <!-- End Main Footer -->
+  
+  
+    </div><!-- End Page Wrapper -->
+  
+  
+    <script src="{% static 'js/jquery.js' %}"></script>
+    <script src="{% static 'js/popper.min.js' %}"></script>
+    <script src="{% static 'js/chosen.min.js' %}"></script>
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'js/jquery.fancybox.js' %}"></script>
+    <script src="{% static 'js/jquery.modal.min.js' %}"></script>
+    <script src="{% static 'js/mmenu.polyfills.js' %}"></script>
+    <script src="{% static 'js/mmenu.js' %}"></script>
+    <script src="{% static 'js/appear.js' %}"></script>
+    <script src="{% static 'js/anm.min.js' %}"></script>
+    <script src="{% static 'js/ScrollMagic.min.js' %}"></script>
+    <script src="{% static 'js/rellax.min.js' %}"></script>
+    <script src="{% static 'js/owl.js' %}"></script>
+    <script src="{% static 'js/wow.js' %}"></script>
+    <script src="{% static 'js/script.js' %}"></script>
+  
+  </body>
+  </html>
+        

@@ -35,6 +35,11 @@ INSTALLED_APPS = [
 
 ]
 
+
+ORDERABLE_MODELS = {
+    'auth.User': ('home', 'users'),
+}
+
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
