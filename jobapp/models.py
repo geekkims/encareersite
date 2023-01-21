@@ -191,13 +191,16 @@ class Company(models.Model):
     company_logo=models.ImageField(upload_to=upload_to,help_text="1920x801 px image for fit background",null=True)
     industry=models.CharField(max_length=255, choices=COMPANY_INDUSTRY)
 
+    def __str__(self):
+        return self.company_name
+
 class Job(models.Model):
 
     user = models.ForeignKey(User, related_name='User', on_delete=models.CASCADE) 
     title = models.CharField(max_length=300)
     slug = models.SlugField(unique=True)
     description = RichTextField()
-    tags = TaggableManager()
+    tags = TaggableManager(blank=True)
     location = models.CharField(max_length=30, choices=COUNTY_CHOICES, default='Nairobi')
     job_type = models.CharField(choices=JOB_TYPE, max_length=100)
     category = models.ForeignKey(Category,related_name='Category', on_delete=models.CASCADE)

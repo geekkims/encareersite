@@ -1,5 +1,6 @@
 from django.shortcuts import render
-from jobapp.models import Applicant, Job
+from blogs.models import Blog
+from jobapp.models import Applicant, Company, Job
 from website.models import About, Mainlogo, Offer, Service
 
 # Create your views here.
@@ -9,6 +10,8 @@ def index(request):
     services_obj=Service.objects.filter(status=True)
     jobscount_obj=Job.objects.count()
     jobs_obj=Job.objects.filter(is_closed=False).order_by('-id')[:3]
+    company_obj=Company.objects.all()
+    blog_obj=Blog.objects.all()
 
     context={
 
@@ -16,7 +19,9 @@ def index(request):
         "services_obj":services_obj,
         "jobscount_obj":jobscount_obj,
         "jobs_obj":jobs_obj,
-        "offer_obj":offer_obj
+        "offer_obj":offer_obj,
+        "company_obj":company_obj,
+        "blog_obj":blog_obj,
 
     }
     return render(request,'jobapp/index.html',context)

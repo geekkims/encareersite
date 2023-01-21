@@ -31,11 +31,15 @@ INSTALLED_APPS = [
     'taggit',
     'user_visit',
     'jobapp',
+    'blogs',
     # 'debug_toolbar',
     'django.contrib.humanize',
 
 
 ]
+
+
+CKEDITOR_UPLOAD_PATH="uploads/"   
 
 
 ORDERABLE_MODELS = {
