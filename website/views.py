@@ -42,23 +42,26 @@ def index(request):
 def about(request):
     logo_obj= Mainlogo.objects.last() 
     about_obj=About.objects.last() 
-    totaljob_obj=Job.objects.count()
-    activejob_obj=Job.objects.filter(is_closed=True).count()
-    services_obj=Service.objects.filter(is_active=True)
-    total_applicants=Applicant.objects.count()
+    companycount_obj=Company.objects.count()
+    jobscount_obj=Job.objects.count()
+    appcount_obj=Applicant.objects.count()
+
+    
+  
+    
     context={
 
         "logo_obj":logo_obj,
         "about_obj":about_obj,
-        "totaljob_obj":totaljob_obj,
-        "activejob_obj":activejob_obj,
-        "total_applicants":total_applicants,
-        "services_obj":services_obj,
+        "companycount_obj":companycount_obj,
+        "jobscount_obj":jobscount_obj,
+        "appcount_obj":appcount_obj,
+       
         
 
 
     }
-    return render(request,'jobapp/about.html',context)
+    return render(request,'front-end/about/index.html',context)
 
 
 def Services(request):

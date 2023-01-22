@@ -31,6 +31,10 @@ class About(models.Model):
     title=models.CharField(max_length=100)
     image=models.ImageField(upload_to="about", help_text="1920x801 px image for fit background")
     about = RichTextField()
+
+
+    # Process
+    
   
     # End of the recruitment Process
 

@@ -3,99 +3,100 @@
 
 
 {% block content %}
-    
+
 
 
 <!-- Slider Section -->
 
-    
+
 <div class="banner-area style2">
-<div class="container-fluid">
-<div class="row align-items-center">
-<div class="col-lg-6">
-<div class="banner-content style2">
-<div class="banner-title">
-<h1>We'll Help You To Find Your Desired Job</h1>
-</div>
-<div class="serech-over">
-<span>Search Over {{jobscount_obj}} Jobs Today!</span>
-</div>
-<div class="banner-search-form style-2">
-<form>
-<div class="row g-0 align-items-center">
-<div class="col-lg-3 col-sm-6">
-<div class="form-group">
-<input class="form-control" type="text" placeholder="Job Title">
-<i class="flaticon-portfolio"></i>
-</div>
-</div>
-<div class="col-lg-3 col-sm-6">
-<div class="form-group">
-<input class="form-control" type="text" placeholder="Location">
-<i class="flaticon-location"></i>
-</div>
-</div>
-<div class="col-lg-3 col-sm-6">
-<div class="form-group style">
-<select class="form-select form-control" aria-label="Default select example">
-<option selected>Category</option>
+    <div class="container-fluid">
+        <div class="row align-items-center">
+            <div class="col-lg-6">
+                <div class="banner-content style2">
+                    <div class="banner-title">
+                        <h1>We'll Help You To Find Your Desired Job</h1>
+                    </div>
+                    <div class="serech-over">
+                        <span>Search Over {{jobscount_obj}} Jobs Today!</span>
+                    </div>
+                    <div class="banner-search-form style-2">
+                        <form>
+                            <div class="row g-0 align-items-center">
+                                <div class="col-lg-3 col-sm-6">
+                                    <div class="form-group">
+                                        <input class="form-control" type="text" placeholder="Job Title">
+                                        <i class="flaticon-portfolio"></i>
+                                    </div>
+                                </div>
+                                <div class="col-lg-3 col-sm-6">
+                                    <div class="form-group">
+                                        <input class="form-control" type="text" placeholder="Location">
+                                        <i class="flaticon-location"></i>
+                                    </div>
+                                </div>
+                                <div class="col-lg-3 col-sm-6">
+                                    <div class="form-group style">
+                                        <select class="form-select form-control" aria-label="Default select example">
+                                            <option selected>Category</option>
 
-{% for item in cat_obj %}
-  
-
-<option value="1">{{item.name}}</option>
-
-{% endfor %}
-
-</select>
-<i class="flaticon-list"></i>
-</div>
-</div>
-<div class="col-lg-3 col-sm-6">
-<div class="search-btn">
-<button type="submit" class="default-btn btn"><i class="flaticon-search"></i> Search Jobs</button>
-</div>
-</div>
-</div>
-</form>
-</div>
-<div class="trending-keywords">
-<ul>
-<li><span>Trending Keywords:</span></li>
-
-{% for item in jobs_obj %}
-  
-
-<li><a href="">{{item.tags}}</a></li>
-
-{% endfor %}
-
-</ul>
-</div>
-<div class="funfacts">
-<ul>
-<li>
-<h4>{{appcount_obj}}</h4>
-<span>Applications</span>
-</li>
-
-<li>
-<h4>{{jobscount_obj}}</h4>
-<span>Available Jobs</span>
-</li>
-</ul>
-</div>
-</div>
-</div>
-<div class="col-lg-6">
-<div class="banner-image-content-style2">
-<img src="{{slider_obj.slider_image.url}}" alt="Image">
+                                            {% for item in cat_obj %}
 
 
-</div>
-</div>
-</div>
-</div>
+                                            <option value="1">{{item.name}}</option>
+
+                                            {% endfor %}
+
+                                        </select>
+                                        <i class="flaticon-list"></i>
+                                    </div>
+                                </div>
+                                <div class="col-lg-3 col-sm-6">
+                                    <div class="search-btn">
+                                        <button type="submit" class="default-btn btn"><i class="flaticon-search"></i>
+                                            Search Jobs</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="trending-keywords">
+                        <ul>
+                            <li><span>Trending Keywords:</span></li>
+
+                            {% for item in jobs_obj %}
+
+
+                            <li><a href="">{{item.tags}}</a></li>
+
+                            {% endfor %}
+
+                        </ul>
+                    </div>
+                    <div class="funfacts">
+                        <ul>
+                            <li>
+                                <h4>{{appcount_obj}}</h4>
+                                <span>Applications</span>
+                            </li>
+
+                            <li>
+                                <h4>{{jobscount_obj}}</h4>
+                                <span>Available Jobs</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="banner-image-content-style2">
+                    <img src="{{slider_obj.slider_image.url}}" alt="Image">
+
+
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
 
 
@@ -106,20 +107,21 @@
 
 
 <div class="partner-area pt-100 pb-100">
-<div class="container">
-<div class="partner-slider owl-carousel owl-theme">
+    <div class="container">
+        <div class="partner-slider owl-carousel owl-theme">
 
-    {% for item in company_obj  %}
-      
-    
-<div class="parner-logo">
-<a href="{{item.company_logo.url}}"><img src="{{item.company_logo.url}}" alt="Image" style="width: 40px;"></a>
-</div>
+            {% for item in company_obj %}
 
 
-{% endfor %}
-</div>
-</div>
+            <div class="parner-logo">
+                <a href="{{item.company_logo.url}}"><img src="{{item.company_logo.url}}" alt="Image"
+                        style="width: 40px;"></a>
+            </div>
+
+
+            {% endfor %}
+        </div>
+    </div>
 </div>
 
 
@@ -128,47 +130,47 @@
 <!-- Categories Section -->
 
 <div class="categories-area pb-70">
-<div class="container">
-<div class="title">
-<div class="row align-items-center">
-<div class="col-lg-8 col-md-9">
-<div class="section-title style2">
-<h2>Most Demanded Jobs Categories</h2>
+    <div class="container">
+        <div class="title">
+            <div class="row align-items-center">
+                <div class="col-lg-8 col-md-9">
+                    <div class="section-title style2">
+                        <h2>Most Demanded Jobs Categories</h2>
 
-</div>
-</div>
-<div class="col-lg-4 col-md-3">
-<div class="browse-btn">
-<a href="#" class="default-btn btn">View All Categories</a>
-</div>
-</div>
-</div>
-</div>
-<div class="row">
-
-
-
-    {% for item in cat_obj %}
-    
-
-<div class="col-lg-3 col-sm-6" data-aos="fade-up" data-aos-duration="1200" data-aos-delay="200">
-<div class="single-categories-box">
-<div class="icon">
-<i class="flaticon-customer-support"></i>
-</div>
-<h3>{{item.name}}</h3>
-<br>
-
-</div>
-</div>
-
-  
-{% endfor %}
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-3">
+                    <div class="browse-btn">
+                        <a href="#" class="default-btn btn">View All Categories</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
 
 
 
-</div>
-</div>
+            {% for item in cat_obj %}
+
+
+            <div class="col-lg-3 col-sm-6" data-aos="fade-up" data-aos-duration="1200" data-aos-delay="200">
+                <div class="single-categories-box">
+                    <div class="icon">
+                        <i class="flaticon-customer-support"></i>
+                    </div>
+                    <h3>{{item.name}}</h3>
+                    <br>
+
+                </div>
+            </div>
+
+
+            {% endfor %}
+
+
+
+        </div>
+    </div>
 </div>
 
 <!-- End Of Categories -->
@@ -180,107 +182,110 @@
 
 
     <div class="container">
-    <div class="title">
-    <div class="row align-items-center">
-    <div class="col-lg-8 col-md-9">
-    <div class="section-title style2">
-    <h2>Recent Job Posted</h2>
-    </div>
-    </div>
-    <div class="col-lg-4 col-md-3">
-    <div class="browse-btn">
-    <a href="{% url 'jobapp:jobs' %}" class="default-btn btn">Browse All Jobs</a>
-    </div>
-    </div>
-    </div>
-    </div>
-
-    <div class="job-slider2 owl-carousel owl-theme">
-
-
-
-        {% for job in jobs_obj %}
-          
-        
-    <div class="recent-job-box">
-    <div class="logo">
-    <img src="{% static 'assets/images/icon/icon-11.png' %}" alt="Image">
-    </div>
-    <a href="#"><div class="bookmark">
-    <i class="flaticon-bookmark"></i>
-    </div></a>
-    <div class="time">
-    <span>Fulltime</span>
-    </div>
-    <h3><a href="{% url 'jobapp:jobs-detail' job.slug %}">{{job.title}}</a></h3>
-    <div class="info">
-    <ul>
-    <li><i class="flaticon-time"></i>{{job.last_date|timeuntil }} Left</li>
-    <li><i class="flaticon-location"></i>{{job.location}}</li>
-    </ul>
-    </div>
-    </div>
-
-    {% endfor %}
-
-    
-    </div>
-    </div>
-    </div>
-
-
-    <!-- End of Job Section -->
-    <!-- Services Section -->
-
-
-    <div class="featured-job-area ptb-100 bg-f0f5f7">
-        <div class="container">
         <div class="title">
-        <div class="row align-items-center">
-        <div class="col-lg-8 col-md-9">
-        <div class="section-title style2">
-        <h2>Our Services</h2>
+            <div class="row align-items-center">
+                <div class="col-lg-8 col-md-9">
+                    <div class="section-title style2">
+                        <h2>Recent Job Posted</h2>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-3">
+                    <div class="browse-btn">
+                        <a href="{% url 'jobapp:jobs' %}" class="default-btn btn">Browse All Jobs</a>
+                    </div>
+                </div>
+            </div>
         </div>
+
+        <div class="job-slider2 owl-carousel owl-theme">
+
+
+
+            {% for job in jobs_obj %}
+
+
+            <div class="recent-job-box">
+                <div class="logo">
+                    <img src="{% static 'assets/images/icon/icon-11.png' %}" alt="Image">
+                </div>
+                <a href="#">
+                    <div class="bookmark">
+                        <i class="flaticon-bookmark"></i>
+                    </div>
+                </a>
+                <div class="time">
+                    <span>Fulltime</span>
+                </div>
+                <h3><a href="{% url 'jobapp:jobs-detail' job.slug %}">{{job.title}}</a></h3>
+                <div class="info">
+                    <ul>
+                        <li><i class="flaticon-time"></i>{{job.last_date|timeuntil }} Left</li>
+                        <li><i class="flaticon-location"></i>{{job.location}}</li>
+                    </ul>
+                </div>
+            </div>
+
+            {% endfor %}
+
+
         </div>
-        <div class="col-lg-4 col-md-3">
-        <div class="browse-btn">
-        <a href="#" class="default-btn btn">Browse All Services</a>
-        </div>
-        </div>
-        </div>
+    </div>
+</div>
+
+
+<!-- End of Job Section -->
+<!-- Services Section -->
+
+
+<div class="featured-job-area ptb-100 bg-f0f5f7">
+    <div class="container">
+        <div class="title">
+            <div class="row align-items-center">
+                <div class="col-lg-8 col-md-9">
+                    <div class="section-title style2">
+                        <h2>Our Services</h2>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-3">
+                    <div class="browse-btn">
+                        <a href="#" class="default-btn btn">Browse All Services</a>
+                    </div>
+                </div>
+            </div>
         </div>
         <div class="job-slider owl-carousel owl-theme">
 
             {% for service in services_obj %}
-              
-           
 
-        <div class="single-job-card style-2">
-        <div class="job-image">
-        <a href="{% url 'frontend:service-details' service.slug %}"><img src="{{service.service_image.url}}" alt="Image" style="width:  300px;height: 200px; object-fit: cover"></a>
-        <a href="#"></a>
+
+
+            <div class="single-job-card style-2">
+                <div class="job-image">
+                    <a href="{% url 'frontend:service-details' service.slug %}"><img src="{{service.service_image.url}}"
+                            alt="Image" style="width:  300px;height: 200px; object-fit: cover"></a>
+                    <a href="#"></a>
+                </div>
+                <div class="job-content">
+                    <h2><a href="{% url 'frontend:service-details' service.slug %}">{{service.title}}</a></h2>
+                    <div class="info">
+
+                    </div>
+                    <div class="bottom-content">
+
+                        <p>{{service.description|safe|truncatechars:100}}</p>
+
+                    </div>
+                    <a href="{% url 'frontend:service-details' service.slug %}" class="btn btn-medium btn-primary"
+                        style="align-items:center;">Read More</a>
+                </div>
+            </div>
+
+
+
+            {% endfor %}
         </div>
-        <div class="job-content">
-        <h2><a href="{% url 'frontend:service-details' service.slug %}">{{service.title}}</a></h2>
-        <div class="info">
-       
-        </div>
-        <div class="bottom-content">
-
-            <p>{{service.description|safe|truncatechars:100}}</p>
-        
-        </div>
-        <a href="{% url 'frontend:service-details' service.slug %}" class="btn btn-medium btn-primary" style="align-items:center;">Read More</a>
-        </div>
-        </div>
-
-
-
-        {% endfor %}
-        </div>
-        </div>
-        </div>
-        
+    </div>
+</div>
 
 
 
@@ -289,7 +294,8 @@
 
 
 
-    <!-- End Of Services Section -->
+
+<!-- End Of Services Section -->
 
 
 
@@ -300,58 +306,58 @@
 
 
 <div class="counters-area bg-f0f5f7 pt-100 pb-70">
-<div class="container">
-<div class="section-title">
-<h2>Encareer Site Status </h2>
-</div>
-<div class="row">
-<div class="col-lg-3 col-md-3 col-6">
-<div class="single-counter-item style-2">
-<div class="icon">
-<i class="flaticon-bag"></i>
-</div>
-<h1>
-<span class="odometer" data-count="{{jobscount_obj}}">00</span>
-<span class="target">+</span>
-</h1>
-<p>Jobs Added</p>
-</div>
-</div>
-<div class="col-lg-3 col-md-3 col-6">
-<div class="single-counter-item style-2">
-<div class="icon">
-<i class="flaticon-office-building"></i>
-</div>
-<h1>
-<span class="odometer" data-count="{{companycount_obj}}">00</span>
-</h1>
-<p>Companies</p>
-</div>
-</div>
-<div class="col-lg-3 col-md-3 col-6">
-<div class="single-counter-item style-2">
- <div class="icon">
-<i class="flaticon-cv"></i>
-</div>
-<h1>
-<span class="odometer" data-count="{{appcount_obj}}">00</span>
-</h1>
-<p>Resume</p>
-</div>
-</div>
-<div class="col-lg-3 col-md-3 col-6">
-<div class="single-counter-item style-2">
-<div class="icon">
-<i class="flaticon-member"></i>
-</div>
-<h1>
-<span class="odometer" data-count="{{appcount_obj}}">00</span>
-</h1>
-<p>Members</p>
-</div>
-</div>
-</div>
-</div>
+    <div class="container">
+        <div class="section-title">
+            <h2>Encareer Site Status </h2>
+        </div>
+        <div class="row">
+            <div class="col-lg-3 col-md-3 col-6">
+                <div class="single-counter-item style-2">
+                    <div class="icon">
+                        <i class="flaticon-bag"></i>
+                    </div>
+                    <h1>
+                        <span class="odometer" data-count="{{jobscount_obj}}">00</span>
+                        <span class="target">+</span>
+                    </h1>
+                    <p>Jobs Added</p>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-3 col-6">
+                <div class="single-counter-item style-2">
+                    <div class="icon">
+                        <i class="flaticon-office-building"></i>
+                    </div>
+                    <h1>
+                        <span class="odometer" data-count="{{companycount_obj}}">00</span>
+                    </h1>
+                    <p>Companies</p>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-3 col-6">
+                <div class="single-counter-item style-2">
+                    <div class="icon">
+                        <i class="flaticon-cv"></i>
+                    </div>
+                    <h1>
+                        <span class="odometer" data-count="{{appcount_obj}}">00</span>
+                    </h1>
+                    <p>Resume</p>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-3 col-6">
+                <div class="single-counter-item style-2">
+                    <div class="icon">
+                        <i class="flaticon-member"></i>
+                    </div>
+                    <h1>
+                        <span class="odometer" data-count="{{appcount_obj}}">00</span>
+                    </h1>
+                    <p>Members</p>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
 
 
@@ -361,52 +367,54 @@
 
 
 <div class="blog-area pt-100 pb-70">
-<div class="container">
-<div class="title">
-<div class="row align-items-center">
-<div class="col-lg-8 col-md-9">
-<div class="section-title style2">
-<h2>Read Our Article To Get Tricks</h2>
-</div>
-</div>
-<div class="col-lg-4 col-md-3">
-<div class="browse-btn">
-<a href="{% url 'blogs:blogs' %}" class="default-btn btn">View All Blog</a>
-</div>
-</div>
-</div>
-</div>
-<div class="row justify-content-center">
-{% for blog in blog_obj %}
-  
+    <div class="container">
+        <div class="title">
+            <div class="row align-items-center">
+                <div class="col-lg-8 col-md-9">
+                    <div class="section-title style2">
+                        <h2>Read Our Article To Get Tricks</h2>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-3">
+                    <div class="browse-btn">
+                        <a href="{% url 'blogs:blogs' %}" class="default-btn btn">View All Blog</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row justify-content-center">
+            {% for blog in blog_obj %}
 
 
-<div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-duration="1200" data-aos-delay="200">
 
-<div class="single-blog-card style3">
-<div class="blog-img">
-<a href="{% url 'blogs:blogs-detail' blog.slug %}"><img src="{{blog.header_image.url}}" alt="Image" style="width:  300px;height: 200px; object-fit: cover"> </a>
-</div>
-<div class="blog-content">
-<div class="info-list">
-<ul>
-<li><i class="fa-solid fa-user"></i><a href="{% url 'blogs:blogs-detail' blog.slug %}">{{blog.author}}</a></li>
-<li><i class="fa-solid fa-calendar-days"></i> {{blog.date_added}}</li>
-</ul>
-</div>
-<h2><a href="{% url 'blogs:blogs-detail' blog.slug %}">{{blog.title|truncatechars:20}}</a></h2>
-<p>{{blog.body|safe|truncatechars:150}}</p>
-<a href="{% url 'blogs:blogs-detail' blog.slug %}" class="read-more">Read More</a>
-</div>
-</div>
-</div>
+            <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-duration="1200" data-aos-delay="200">
+
+                <div class="single-blog-card style3">
+                    <div class="blog-img">
+                        <a href="{% url 'blogs:blogs-detail' blog.slug %}"><img src="{{blog.header_image.url}}"
+                                alt="Image" style="width:  300px;height: 200px; object-fit: cover"> </a>
+                    </div>
+                    <div class="blog-content">
+                        <div class="info-list">
+                            <ul>
+                                <li><i class="fa-solid fa-user"></i><a
+                                        href="{% url 'blogs:blogs-detail' blog.slug %}">{{blog.author}}</a></li>
+                                <li><i class="fa-solid fa-calendar-days"></i> {{blog.date_added}}</li>
+                            </ul>
+                        </div>
+                        <h2><a href="{% url 'blogs:blogs-detail' blog.slug %}">{{blog.title|truncatechars:20}}</a></h2>
+                        <p>{{blog.body|safe|truncatechars:150}}</p>
+                        <a href="{% url 'blogs:blogs-detail' blog.slug %}" class="read-more">Read More</a>
+                    </div>
+                </div>
+            </div>
 
 
-{% endfor %}
+            {% endfor %}
 
 
-</div>
-</div>
+        </div>
+    </div>
 </div>
 
 <!-- End Of Blog Area -->
@@ -416,24 +424,25 @@
 
 
 <div class="subscribe-area bg-f0f5f7">
-<div class="container">
-<div class="row align-items-center">
-<div class="col-lg-5">
-<div class="subsceibe-left-content">
-<h2>Subscribe Our Newsletter</h2>
-</div>
-</div>
-<div class="col-lg-7">
-<div class="subscribe-form">
-<form class="newsletter-form" data-toggle="validator">
-<input type="email" class="form-control" placeholder="Your Email" name="EMAIL" required autocomplete="off">
-<button class="default-btn" type="submit">Subscribe Now </button>
-<div id="validator-newsletter" class="form-result"></div>
-</form>
-</div>
-</div>
-</div>
-</div>
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-5">
+                <div class="subsceibe-left-content">
+                    <h2>Subscribe Our Newsletter</h2>
+                </div>
+            </div>
+            <div class="col-lg-7">
+                <div class="subscribe-form">
+                    <form class="newsletter-form" data-toggle="validator">
+                        <input type="email" class="form-control" placeholder="Your Email" name="EMAIL" required
+                            autocomplete="off">
+                        <button class="default-btn" type="submit">Subscribe Now </button>
+                        <div id="validator-newsletter" class="form-result"></div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
 
 <!-- End of subscribe section -->

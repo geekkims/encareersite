@@ -1,0 +1,103 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block content %}
+
+
+<div class="page-banner-area bg-f0f4fc">
+    <div class="container">
+    <div class="page-banner-content">
+    <h1>About Us</h1>
+    <ul>
+    <li><a href="index.html">Home</a></li>
+    <li>About Us</li>
+    </ul>
+    </div>
+    </div>
+    </div>
+    
+    
+    <div class="cv-area ptb-100">
+    <div class="container">
+    <div class="row align-items-center">
+    <div class="col-lg-6">
+    <div class="cv-img-area-style2">
+    <img src="{{about_obj.image.url}}" alt="Image" style="width:  450px;height: 600px; object-fit: cover">
+    
+    </div>
+    </div>
+    <div class="col-lg-6">
+    <div class="cv-content style2 pl-15">
+    <h2>{{about_obj.title}}</h2>
+   
+    <p>{{about_obj.about|safe}}</p>
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    
+ 
+    
+    <div class="counters-area bg-f0f5f7 pt-100 pb-70">
+        <div class="container">
+            <div class="section-title">
+                <h2>Encareer Site Status </h2>
+            </div>
+            <div class="row">
+                <div class="col-lg-3 col-md-3 col-6">
+                    <div class="single-counter-item style-2">
+                        <div class="icon">
+                            <i class="flaticon-bag"></i>
+                        </div>
+                        <h1>
+                            <span class="odometer" data-count="{{jobscount_obj}}">00</span>
+                            <span class="target">+</span>
+                        </h1>
+                        <p>Jobs Added</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-3 col-6">
+                    <div class="single-counter-item style-2">
+                        <div class="icon">
+                            <i class="flaticon-office-building"></i>
+                        </div>
+                        <h1>
+                            <span class="odometer" data-count="{{companycount_obj}}">00</span>
+                        </h1>
+                        <p>Companies</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-3 col-6">
+                    <div class="single-counter-item style-2">
+                        <div class="icon">
+                            <i class="flaticon-cv"></i>
+                        </div>
+                        <h1>
+                            <span class="odometer" data-count="{{appcount_obj}}">00</span>
+                        </h1>
+                        <p>Resume</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-3 col-6">
+                    <div class="single-counter-item style-2">
+                        <div class="icon">
+                            <i class="flaticon-member"></i>
+                        </div>
+                        <h1>
+                            <span class="odometer" data-count="{{appcount_obj}}">00</span>
+                        </h1>
+                        <p>Members</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+
+
+
+
+{% endblock %}
+    
