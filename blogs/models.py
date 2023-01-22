@@ -4,6 +4,7 @@ from django.contrib.auth import get_user_model
 from django.utils import timezone
 from ckeditor_uploader.fields import RichTextUploadingField
 from django_resized import ResizedImageField
+from taggit.managers import TaggableManager
 
 
 
@@ -39,6 +40,7 @@ class Blog(models.Model):
     date_added = models.DateTimeField(auto_now_add=True)
     comment_count=models.IntegerField(default=0)
     category=models.ManyToManyField(Category)
+    tags=TaggableManager(blank=True)
 
     class Meta:
         ordering= ['-date_added']

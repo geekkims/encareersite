@@ -1,0 +1,61 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block content %}
+
+
+
+<div class="blog-area ptb-100">
+    <div class="container">
+    <div class="row justify-content-center">
+
+
+        {% for blogs in blogs_obj %}
+          
+
+
+    <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-duration="1200" data-aos-delay="200">
+
+
+    <div class="single-blog-card style3">
+    <div class="blog-img">
+    <a href="{% url 'blogs:blogs-detail' blogs.slug %}"><img src="{{blogs.header_image.url}}" alt="Image"   style="width:  300px;height: 200px; object-fit: cover">></a>
+     </div>
+    <div class="blog-content">
+    <div class="info-list">
+    <ul>
+    <li><i class="fa-solid fa-user"></i><a href="{% url 'blogs:blogs-detail' blogs.slug %}">{{blogs.author}}</a></li>
+    <li><i class="fa-solid fa-calendar-days"></i> {{blogs.date_added}}</li>
+    </ul>
+    </div>
+    <h2><a href="{% url 'blogs:blogs-detail' blogs.slug %}">{{blogs.title|truncatechars:40}}</a></h2>
+
+    <p>{{blogs.body|safe|truncatechars:150}}</p>
+    <a href="{% url 'blogs:blogs-detail' blogs.slug %}" class="read-more">Read More</a>
+    </div>
+    </div>
+    </div>
+
+
+
+    {% endfor %}
+
+
+    </div>
+    <div class="paginations">
+    <ul>
+    <li><a href="#"><i class="fa-solid fa-angle-left"></i></a></li>
+    <li><a class="active" href="blog-grid.html">1</a></li>
+    <li><a href="#">2</a></li>
+    <li><a href="#">3</a></li>
+    <li><a href="#"><i class="fa-solid fa-angle-right"></i></a></li>
+    </ul>
+    </div>
+    </div>
+    </div>
+    
+
+
+
+{% endblock %}
