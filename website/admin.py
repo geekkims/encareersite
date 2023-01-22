@@ -11,6 +11,8 @@ class AboutAdmin(admin.ModelAdmin):
 class ServiceAdmin(admin.ModelAdmin):
     prepopulated_fields = {'slug': ('title',)}
     list_display=('title','created_at','status')
+    
+   
 
 class OfferAdmin(admin.ModelAdmin):
     prepopulated_fields = {'slug': ('name',)}

@@ -45,10 +45,8 @@ def about(request):
     companycount_obj=Company.objects.count()
     jobscount_obj=Job.objects.count()
     appcount_obj=Applicant.objects.count()
+    services_obj=Service.objects.filter(status=True)
 
-    
-  
-    
     context={
 
         "logo_obj":logo_obj,
@@ -56,6 +54,7 @@ def about(request):
         "companycount_obj":companycount_obj,
         "jobscount_obj":jobscount_obj,
         "appcount_obj":appcount_obj,
+        "services_obj":services_obj,
        
         
 
@@ -71,13 +70,21 @@ def Services(request):
 def Servicedetails(request,slug):
     logo_obj= Mainlogo.objects.last() 
     services_obj=Service.objects.filter(status=True)
-    slug_obj = Service.objects.get(slug=slug)
+
+    try:
+        service_obj=Service.objects.get(slug=slug)
+        
+    except Service.DoesNotExist:
+        service_obj=None
+    
+    
  
     context={
 
         "logo_obj":logo_obj,
+        "service_obj":service_obj,
         "services_obj":services_obj,
-        "slug_obj":slug_obj,
+        
 
     }
     return render(request,'front-end/services/details.html',context)

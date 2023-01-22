@@ -70,7 +70,6 @@ class Service(models.Model):
     slug = models.CharField(max_length=255)
     
     service_image = models.ImageField(upload_to=upload_to,help_text="1920x801 px image for fit background",null=True)
-
     description=RichTextField(blank=True)
     status=models.BooleanField(default=True)
     created_at=models.DateTimeField(auto_now_add=True,null=True)

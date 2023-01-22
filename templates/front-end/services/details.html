@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block content %}
+
+
+
+<div class="cv-area ptb-100">
+    <div class="container">
+    <div class="row align-items-center">
+ 
+
+
+    <div class="col-lg-6">
+    <div class="cv-content style2 pl-15">
+    <h2>{{service_obj.title}}</h2>
+    <p>{{service_obj.description|safe}}
+    </div>
+    </div>
+
+
+    <div class="col-lg-6">
+        <div class="cv-img-area-style2 pl-15">
+        <img src="{{service_obj.service_image.url}}" alt="Image" style="
+        height:500px;
+        width:500px;
+       margin-bottom: 500px;
+        ">
+       
+        </div>
+        </div>
+
+        <div>
+            <p>{{service_obj.description|safe}}</p>
+        </div>
+    
+
+
+
+
+
+    
+    </div>
+    </div>
+    </div>
+    
+    
+
+
+
+
+
+{% endblock %}
