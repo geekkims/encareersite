@@ -17,6 +17,16 @@ class Mainlogo(models.Model):
         return self.title
 
 
+class Slider(models.Model):
+    title=models.CharField(max_length=100)
+    slider_image = models.ImageField(upload_to="logo", help_text="1920x801 px image for fit background")
+    created_at=models.DateTimeField(auto_now_add=True)
+    status=models.BooleanField(default=True)
+    
+    def __str__(self):
+        return self.title
+
+
 class About(models.Model):
     title=models.CharField(max_length=100)
     image=models.ImageField(upload_to="about", help_text="1920x801 px image for fit background")

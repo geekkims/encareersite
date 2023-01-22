@@ -153,8 +153,8 @@ JOB_TYPE = (
 
 
 JOB_CATEGORIES = [
-    ('Information Technology', 'Information Technology'),
-    ('Human Resources', 'Human Resources'),
+    ('IT', 'IT'),
+    ('HR', 'HR'),
     ('Marketing', 'Marketing'),
     ('Finance', 'Finance'),
     ('Operations', 'Operations'),
@@ -196,7 +196,6 @@ class Company(models.Model):
         
 
 class Job(models.Model):
-
     user = models.ForeignKey(User, related_name='User', on_delete=models.CASCADE) 
     title = models.CharField(max_length=300)
     slug = models.SlugField(unique=True)

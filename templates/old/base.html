@@ -1,0 +1,240 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>Encareer | Empowering your workforce, enhancing your success</title>
+
+  <!-- Stylesheets -->
+  <link href="{% static 'css/bootstrap.css' %}" rel="stylesheet">
+  <link href="{% static 'css/style.css' %}" rel="stylesheet">
+  <link href="{% static 'css/custom.css' %}" rel="stylesheet">
+  <link href="{% static 'css/responsive.css' %}" rel="stylesheet">
+
+  <link rel="shortcut icon" href="{{logo_obj.background_image.url}}" type="image/x-icon">
+  <link rel="icon" href="{{logo_obj.background_image.url}}" type="image/x-icon">
+
+  <!-- Responsive -->
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+  <!--[if lt IE 9]><script src="{% static 'https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js' %}"></script><![endif]-->
+  <!--[if lt IE 9]><script src="{% static 'js/respond.js' %}"></script><![endif]-->
+</head>
+
+<body data-anm=".anm">
+
+  <div class="page-wrapper">
+
+  
+
+    <!-- Header Span -->
+    <span class="header-span"></span>
+
+    <!-- Main Header-->
+    <header class="main-header transparent">
+
+      <div class="main-box">
+      
+      <div class="nav-outer">
+      <div class="logo-box">
+      <div class="logo">
+      <a href="https://superio.bookingcore.org">
+      <img src="https://superio.bookingcore.org/uploads/demo/general/logo.svg" alt="Superio">
+      </a>
+      </div>
+      </div>
+      <nav class="nav main-menu">
+      <ul class="navigation" id="navbar"><li class=" dropdown depth-0"><a target="" href="/">Home <i class="caret fa fa-angle-down"></i></a><ul class="children-menu menu-dropdown"><li class=" depth-1"><a target="" href="/">Home Page 01</a></li><li class=" depth-1"><a target="" href="/page/home-page-2">Home Page 02</a></li><li class=" depth-1"><a target="" href="/page/home-page-3">Home Page 03</a></li><li class=" depth-1"><a target="" href="/page/home-page-4">Home Page 04</a></li><li class=" depth-1"><a target="" href="/page/home-page-5">Home Page 05</a></li><li class=" depth-1"><a target="" href="/page/home-page-6">Home Page 06</a></li><li class=" depth-1"><a target="" href="/page/home-page-7">Home Page 07</a></li><li class=" depth-1"><a target="" href="/page/home-page-8">Home Page 08</a></li><li class=" depth-1"><a target="" href="/page/home-page-9">Home Page 09</a></li></ul></li><li class=" dropdown depth-0"><a target="" href="/gig">GIG <i class="caret fa fa-angle-down"></i></a><ul class="children-menu menu-dropdown"><li class=" depth-1"><a target="" href="/gig-cat/graphics-design">Category Level 1</a></li><li class=" depth-1"><a target="" href="/gig-cat/logo-design">Category Level 2</a></li><li class=" depth-1"><a target="" href="/gig">Gigs Listing</a></li><li class=" depth-1"><a target="" href="/gig/i-will-quod-corrupti-veritatis">Gig Single</a></li></ul></li><li class=" dropdown depth-0"><a target="" href="/">Find Jobs <i class="caret fa fa-angle-down"></i></a><ul class="children-menu menu-dropdown"><li class=" dropdown depth-1"><a target="" href="/job">Jobs Listing <i class="caret fa fa-angle-down"></i></a><ul class="children-menu menu-dropdown"><li class=" depth-2"><a target="" href="/job">Jobs Listing V1</a></li><li class=" depth-2"><a target="" href="/job?_layout=v2">Jobs Listing V2</a></li><li class=" depth-2"><a target="" href="/job?_layout=v3">Jobs Listing V3</a></li><li class=" depth-2"><a target="" href="/job?_layout=v4">Jobs Listing V4</a></li><li class=" depth-2"><a target="" href="/job?_layout=v5">Jobs Listing V5</a></li><li class=" depth-2"><a target="" href="/job?_layout=v6">Jobs Listing V6</a></li><li class=" depth-2"><a target="" href="/job?_layout=v7">Jobs Listing V7</a></li><li class=" depth-2"><a target="" href="/job?_layout=v8">Jobs Listing V8</a></li><li class=" depth-2"><a target="" href="/job?_layout=v9">Jobs Listing V9</a></li></ul></li><li class=" dropdown depth-1"><a target="" href="/job/product-designer-ui-designer">Job Single <i class="caret fa fa-angle-down"></i></a><ul class="children-menu menu-dropdown"><li class=" depth-2"><a target="" href="/job/product-designer-ui-designer">Job Single V1</a></li><li class=" depth-2"><a target="" href="/job/product-designer-ui-designer?_layout=v2">Job Single V2</a></li><li class=" depth-2"><a target="" href="/job/product-designer-ui-designer?_layout=v3">Job Single V3</a></li><li class=" depth-2"><a target="" href="/job/restaurant-team-member?_layout=v4">Job Single V4</a></li><li class=" depth-2"><a target="" href="/job/product-designer-ui-designer?_layout=v5">Job Single V5</a></li><li class=" depth-2"><a target="" href="/job/product-designer-ui-designer">Job – Internal Apply</a></li><li class=" depth-2"><a target="" href="/job/software-engineer-android-lib">Job – External Apply</a></li><li class=" depth-2"><a target="" href="/job/group-marketing-manager">Job – Email Apply</a></li></ul></li></ul></li><li class=" dropdown depth-0"><a target="" href="/">Employers <i class="caret fa fa-angle-down"></i></a><ul class="children-menu menu-dropdown"><li class=" dropdown depth-1"><a target="" href="/companies">Employers List <i class="caret fa fa-angle-down"></i></a><ul class="children-menu menu-dropdown"><li class=" depth-2"><a target="" href="/companies?_layout=v1">Employers Listing V1</a></li><li class=" depth-2"><a target="" href="/companies?_layout=v2">Employers Listing V2</a></li><li class=" depth-2"><a target="" href="/companies?_layout=v3">Employers Listing V3</a></li><li class=" depth-2"><a target="" href="/companies?_layout=v4">Employers Listing V4</a></li></ul></li><li class=" dropdown depth-1"><a target="" href="/companies/netflix">Employer Single <i class="caret fa fa-angle-down"></i></a><ul class="children-menu menu-dropdown"><li class=" depth-2"><a target="" href="/companies/netflix?_layout=v1">Employer Single V1</a></li><li class=" depth-2"><a target="" href="/companies/netflix?_layout=v2">Employer Single V2</a></li><li class=" depth-2"><a target="" href="/companies/netflix?_layout=v3">Employer Single V3</a></li></ul></li></ul></li><li class=" dropdown depth-0"><a target="" href="/">Candidates <i class="caret fa fa-angle-down"></i></a><ul class="children-menu menu-dropdown"><li class=" dropdown depth-1"><a target="" href="/candidate">Candidates List <i class="caret fa fa-angle-down"></i></a><ul class="children-menu menu-dropdown"><li class=" depth-2"><a target="" href="/candidate?_layout=v1">Candidates Listing V1</a></li><li class=" depth-2"><a target="" href="/candidate?_layout=v2">Candidates Listing V2</a></li><li class=" depth-2"><a target="" href="/candidate?_layout=v3">Candidates Listing V3</a></li><li class=" depth-2"><a target="" href="/candidate?_layout=v4">Candidates Listing V4</a></li><li class=" depth-2"><a target="" href="/candidate?_layout=v5">Candidates Listing V5</a></li></ul></li><li class=" dropdown depth-1"><a target="" href="/candidate/ui-designer-at-invision-1">Candidates Single <i class="caret fa fa-angle-down"></i></a><ul class="children-menu menu-dropdown"><li class=" depth-2"><a target="" href="/candidate/ui-designer-at-invision-1">Candidate Single V1</a></li><li class=" depth-2"><a target="" href="/candidate/ui-designer-at-invision-1?_layout=v2">Candidate Single V2</a></li><li class=" depth-2"><a target="" href="/candidate/ui-designer-at-invision-1?_layout=v3">Candidate Single V3</a></li></ul></li></ul></li><li class=" dropdown depth-0"><a target="" href="/">Pages <i class="caret fa fa-angle-down"></i></a><ul class="children-menu menu-dropdown"><li class=" depth-1"><a target="" href="/news">Blog List</a></li><li class=" depth-1"><a target="" href="/news/5-tips-for-your-job-interviews">Blog Single</a></li><li class=" depth-1"><a target="" href="/page/about">About Us</a></li><li class=" depth-1"><a target="" href="/page/faqs">FAQ's</a></li><li class=" depth-1"><a target="" href="/page/terms-and-conditions">Terms</a></li><li class=" depth-1"><a target="" href="/contact">Contact</a></li></ul></li></ul> </nav>
+      
+      </div>
+      <div class="outer-box">
+      <ul class="multi-lang">
+      <li class="dropmenu-right dropdown show">
+      <a href="#" id="dropdownLang" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="is_login dropdown-toggle">
+      <span class="flag-icon flag-icon-gb"></span>
+      <span class="lang-text">English</span>
+      <i class="fa fa-angle-down"></i>
+      </a>
+      <ul class="dropdown-menu text-left" aria-labelledby="dropdownLang">
+      <li>
+       <a href="https://superio.bookingcore.org?set_lang=ja" class="is_login">
+      <span class="flag-icon flag-icon-jp"></span>
+      Japanese
+      </a>
+      </li>
+      </ul>
+      </li>
+      </ul>
+      <a href="https://superio.bookingcore.org/user/bookmark" class="menu-btn mr-3 ml-2">
+      <span class="icon la la-bookmark-o"></span>
+      </a>
+      
+      <div class="btn-box">
+      <a href="#" class="theme-btn btn-style-three "><span class="bc-call-modal login">Login</span>/ <span class="bc-call-modal signup">Register</span></a>
+      </div>
+      </div>
+      </div>
+      
+      <div class="mobile-header">
+      <div class="logo">
+      <a href="https://superio.bookingcore.org">
+      <img src="https://superio.bookingcore.org/uploads/demo/general/logo.svg" alt="Superio">
+      </a>
+      </div>
+      
+      <div class="nav-outer clearfix">
+      <div class="outer-box">
+      
+      <div class="login-box">
+      <a href="#" class="bc-call-modal login"><span class="icon-user"></span></a>
+      </div>
+      <a href="#nav-mobile" class="mobile-nav-toggler"><span class="flaticon-menu-1"></span></a>
+      </div>
+      </div>
+      </div>
+      
+      <div id="nav-mobile"></div>
+      </header>
+      
+    <!--End Main Header -->
+
+
+    
+    {% block content %}
+        
+    {% endblock content %}
+
+
+
+    <!-- Main Footer -->
+    <footer class="main-footer style-five">
+        <!--Widgets Section-->
+        <div class="widgets-section">
+          <div class="auto-container">
+  
+            <div class="row">
+              <div class="big-column col-xl-3 col-lg-3 col-md-12">
+                <div class="footer-column about-widget">
+                 
+                  <p class="phone-num"><span>About Us</span></p>
+                  <p>We provide comprehensive support for all of your human resource needs, promoting the importance of standard HR practices and going above and beyond to anticipate and meet the needs of our employees in order to maximize productivity.
+                </div>
+              </div>
+  
+              <div class="big-column col-xl-9 col-lg-9 col-md-12">
+                <div class="row">
+                  <div class="footer-column col-lg-3 col-md-6 col-sm-12">
+                    <div class="footer-widget links-widget">
+                      <h4 class="widget-title">Important Links</h4>
+                      <div class="widget-content">
+                        <ul class="list">
+                          <li><a href="#">About Us</a></li>
+                          <li><a href="#">Find Jobs</a></li>
+                          <li><a href="#">Contact Us</a></li>
+                          <li><a href="#">Our Blogs</a></li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+  
+                  <div class="footer-column col-lg-4 col-md-6 col-sm-12">
+                    <div class="footer-widget links-widget">
+                      <h4 class="widget-title">JOIN OUR MAILING LIST                    </h4>
+                      <div class="widget-content">
+                        {% comment %} Insert simple form {% endcomment %}
+                        
+
+                        <form>
+                          <div class="mb-3">
+                            <label for="email" class="form-label">Email address</label>
+                            <input type="email" class="form-control" id="email" aria-describedby="emailHelp">
+                            
+                          </div>
+                        
+                          <button type="submit" class="btn btn-primary">Subscribe</button>
+                        </form>
+
+
+
+
+
+
+
+
+
+                        {% comment %} End of the Form {% endcomment %}
+                      </div>
+                    </div>
+                  </div>
+  
+               
+                  <div class="footer-column col-lg-5 col-md-6 col-sm-12">
+                    <div class="footer-widget">
+                      <h4 class="widget-title">Our location</h4>
+                      <div class="widget-content">
+                        <div class="download-btns">
+                       {% comment %} Map {% endcomment %}
+
+                       <div class="mapouter"><div class="gmap_canvas"><iframe width="246" height="170" id="gmap_canvas" src="https://maps.google.com/maps?q=Shankardass%20house&t=k&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe><a href="https://www.whatismyip-address.com/divi-discount/">divi discount</a><br><style>.mapouter{position:relative;text-align:right;height:170px;width:246px;}</style><a href="https://www.embedgooglemap.net">make your own map google</a><style>.gmap_canvas {overflow:hidden;background:none!important;height:170px;width:246px;}</style></div></div>
+
+
+                       {% comment %} End Map {% endcomment %}
+
+
+
+
+
+
+
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+  
+  
+        <!--Bottom-->
+        <div class="footer-bottom">
+          <div class="auto-container">
+            <div class="outer-box">
+              <div class="copyright-text">© 2023 <a href="#">Career Ventures Limited</a>. All Right Reserved.</div>
+              <div class="social-links">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="scroll-to-top scroll-to-target" data-target="html"><span class="fa fa-angle-up"></span></div>
+      </footer>
+      <!-- End Main Footer -->
+  
+  
+    </div><!-- End Page Wrapper -->
+  
+  
+    <script src="{% static 'js/jquery.js' %}"></script>
+    <script src="{% static 'js/popper.min.js' %}"></script>
+    <script src="{% static 'js/chosen.min.js' %}"></script>
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'js/jquery.fancybox.js' %}"></script>
+    <script src="{% static 'js/jquery.modal.min.js' %}"></script>
+    <script src="{% static 'js/mmenu.polyfills.js' %}"></script>
+    <script src="{% static 'js/mmenu.js' %}"></script>
+    <script src="{% static 'js/appear.js' %}"></script>
+    <script src="{% static 'js/anm.min.js' %}"></script>
+    <script src="{% static 'js/ScrollMagic.min.js' %}"></script>
+    <script src="{% static 'js/rellax.min.js' %}"></script>
+    <script src="{% static 'js/owl.js' %}"></script>
+    <script src="{% static 'js/wow.js' %}"></script>
+    <script src="{% static 'js/script.js' %}"></script>
+  
+  </body>
+  </html>
+        

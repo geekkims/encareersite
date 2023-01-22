@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from blogs.models import Blog
-from jobapp.models import Applicant, Company, Job
-from website.models import About, Mainlogo, Offer, Service
+from jobapp.models import Applicant, Category, Company, Job
+from website.models import About, Mainlogo, Offer, Service, Slider
 
 # Create your views here.
 def index(request):
@@ -11,7 +11,14 @@ def index(request):
     jobscount_obj=Job.objects.count()
     jobs_obj=Job.objects.filter(is_closed=False).order_by('-id')[:3]
     company_obj=Company.objects.all()
-    blog_obj=Blog.objects.all()
+    companycount_obj=Company.objects.count()
+    blog_obj=Blog.objects.all()[:3]
+    cat_obj=Category.objects.all()[0:4]
+    appcount_obj=Applicant.objects.count()
+    slider_obj=Slider.objects.filter(status=True).last
+    category_stats = {}
+    for category in cat_obj:
+        category_stats[category.name] = Job.objects.filter(category=category).count()
 
     context={
 
@@ -22,9 +29,14 @@ def index(request):
         "offer_obj":offer_obj,
         "company_obj":company_obj,
         "blog_obj":blog_obj,
+        "cat_obj":cat_obj,
+        "appcount_obj":appcount_obj,
+        "slider_obj":slider_obj,
+        "category_stats":category_stats,
+        "companycount_obj":companycount_obj
 
     }
-    return render(request,'jobapp/index.html',context)
+    return render(request,'homepage/index.html',context)
 
 
 def about(request):
@@ -49,9 +61,13 @@ def about(request):
     return render(request,'jobapp/about.html',context)
 
 
-def Services(request,slug):
+def Services(request):
+
+    return render(request,'services/services.html')
+
+def Servicedetails(request,slug):
     logo_obj= Mainlogo.objects.last() 
-    services_obj=Service.objects.filter(is_active=True)
+    services_obj=Service.objects.filter(status=True)
     slug_obj = Service.objects.get(slug=slug)
  
     context={
@@ -61,4 +77,4 @@ def Services(request,slug):
         "slug_obj":slug_obj,
 
     }
-    return render(request,'jobapp/services.html',context)
+    return render(request,'front-end/services/details.html',context)

@@ -8,7 +8,7 @@ urlpatterns = [
     path('authentication/',include('authentication.urls')),
     path('',include('website.urls')),
     path('',include('jobapp.urls')),
-    path('job/',include('blogs.urls')),
+    path('blogs/',include('blogs.urls')),
     re_path(r'^ckeditor/', include('ckeditor_uploader.urls')), # The CKEditor path
 
 ]
