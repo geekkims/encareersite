@@ -1,0 +1,98 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block content %}
+
+
+
+<div class="job-details-banner-area bg-f0f4fc">
+    <div class="container">
+    <div class="job-details-banner-content">
+    <div class="row align-items-center">
+    <div class="col-lg-7 col-md-8">
+    <div class="job-details-banner-left-content">
+    
+    <span>{{single_job.category}}</span>
+    <h2>{{single_job.title}}</h2>
+    <div class="info">
+    <ul>
+    <li><i class="flaticon-time"></i>{{single_job.last_date|timeuntil}} Left</li>
+    <li><i class="flaticon-location"></i>{{single_job.location}}</li>
+    </ul>
+    </div>
+    </div>
+    </div>
+    <div class="col-lg-5 col-md-4">
+    <!-- <div class="job-details-banner-right-content">
+    <a href="contact.html" class="default-btn btn">Apply Now</a>
+    <div class="share-content">
+    <ul>
+    <li><span><i class="fa-solid fa-share-nodes"></i>Share</span></li>
+    <li>
+    <a href="https://www.facebook.com/" target="_blank"><i class="fa-brands fa-facebook-f"></i></a>
+    </li>
+    <li>
+    <a href="https://www.twitter.com/" target="_blank"><i class="fa-brands fa-twitter"></i></a>
+    </li>
+    <li>
+    <a href="https://instagram.com/?lang=en" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+    </li>
+    </ul>
+    </div>
+    </div> -->
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    
+    
+    <div class="job-details-area pt-100 pb-70">
+    <div class="container">
+    <div class="row">
+    <div class="col-lg-8">
+    <div class="job-details-content">
+    <div class="job-description">
+    <h3>Job Description</h3>
+    <p>{{single_job.description|safe}}</p>
+    <p>Apply Via jobs@careerventures.co.ke</p>
+    </div>
+
+   
+   
+
+
+
+
+
+
+    </div>
+    </div>
+    <div class="col-lg-4">
+    <div class="sidebar">
+   
+    <div class="single-sidebar-widget job-overview">
+    <h3>Job Overview</h3>
+    <ul>
+    <li><span>Published On:</span>{{single_job.created_date}}</li>
+    <li><span>Job Type:</span>{{single_job.job_type}}</li>
+    <li><span>Job Location:</span>{{single_job.location}}</li>
+    
+    </ul>
+    </div>
+
+ 
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    
+
+
+
+
+
+
+{% endblock %}

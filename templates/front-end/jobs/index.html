@@ -1,0 +1,193 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block content %}
+
+
+    
+    <div class="job-listing-area pt-100 pb-70">
+    <div class="container">
+    <div class="job-listing-search-form">
+    <form>
+    <div class="row g-0">
+    <div class="col-lg-3 col-sm-6">
+    <div class="form-group">
+    <input class="form-control" type="text" placeholder="Keywords / Job Title">
+     <i class="flaticon-portfolio"></i>
+    </div>
+    </div>
+    <div class="col-lg-3 col-sm-6">
+    <div class="form-group">
+    <input class="form-control" type="text" placeholder="City Or Postcode">
+    <i class="flaticon-location"></i>
+    </div>
+    </div>
+    <div class="col-lg-4 col-sm-6">
+    <div class="form-group style">
+    <select class="form-select form-control" aria-label="Default select example">
+    <option selected>Chpoose A Category</option>
+    <option value="1">Development</option>
+    <option value="2">Information IT</option>
+    <option value="3">Corporate Job</option>
+    </select>
+    <i class="flaticon-list"></i>
+    </div>
+    </div>
+    <div class="col-lg-2 col-sm-6">
+    <div class="search-btn">
+    <button type="submit" class="default-btn btn">Find Jobs</button>
+    </div>
+    </div>
+    </div>
+    </form>
+    </div>
+    <div class="row">
+    <div class="col-lg-8">
+    <div class="job-listing-content">
+    <div class="search-job-top-content">
+    <div class="row align-items-center">
+    <div class="col-lg-6 col-md-4">
+    <div class="shoing-content">
+    <span>Showing 1 – 6 of 145 results</span>
+    </div>
+    </div>
+    <div class="col-lg-6 col-md-8">
+    <div class="shorting-content">
+    <div class="row">
+    <div class="col-6">
+    <select class="form-select form-control" aria-label="Default select example">
+    <option selected>06 Per Pages</option>
+    <option value="1">01</option>
+    <option value="2">02</option>
+    <option value="3">03</option>
+    <option value="4">04</option>
+    <option value="5">05</option>
+    <option value="6">06</option>
+    </select>
+    </div>
+    <div class="col-6">
+    <select class="form-select form-control" aria-label="Default select example">
+    <option selected>Short By</option>
+    <option value="1">01</option>
+    <option value="2">02</option>
+    <option value="3">03</option>
+    <option value="4">04</option>
+    </select>
+     </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+
+    <div class="row justify-content-center">
+
+
+        {% for job in job_obj %}
+          
+       
+
+    <div class="col-lg-6 col-md-6">
+
+    <div class="single-job-card">
+    <div class="job-image">
+    <a href="{% url 'jobapp:jobs-detail' job.slug %}"><img src="{{photo.job_image.url}}" alt="Image"></a>
+    <a href="#"><div class="bookmark">
+    <i class="flaticon-bookmark"></i>
+    </div></a>
+    </div>
+    <div class="job-content">
+    <span class="time">Fulltime</span>
+    <h2><a href="{% url 'jobapp:jobs-detail' job.slug %}">{{job.title}}</a></h2>
+    <p>{{job.description|safe|truncatechars:150}}</p>
+
+    
+    <div class="info">
+    <ul>
+    <li><i class="flaticon-time"></i>{{job.last_date|timeuntil}} Left</li>
+    <li><i class="flaticon-location"></i>{{job.location}}</li>
+
+    </ul>
+    <a href="{% url 'jobapp:jobs-detail' job.slug %}">Apply For Job</a>
+    </div>
+
+    
+    
+
+
+
+    </div>
+    </div>
+    </div>
+
+
+    {% endfor %}
+ 
+    
+    </div>
+    <div class="paginations mb-30">
+    <ul>
+    <li><a href="#"><i class="fa-solid fa-angle-left"></i></a></li>
+    <li><a class="active" href="job-listing.html">1</a></li>
+    <li><a href="#">2</a></li>
+    <li><a href="#">3</a></li>
+    <li><a href="#"><i class="fa-solid fa-angle-right"></i></a></li>
+    </ul>
+    </div>
+    </div>
+    </div>
+    <div class="col-lg-4">
+    <div class="sidebar">
+    <div class="single-sidebar-widget job-alert">
+    <h3>Create Job Alert</h3>
+    <p>Create a job alert now and never miss any job update.</p>
+    <form>
+    <div class="form-group">
+    <input class="form-control" type="text" placeholder="Keywords / Job Title">
+    </div>
+    <button type="submit" class="default-btn btn">Create Job Alert</button>
+    </form>
+    </div>
+    <div class="single-sidebar-widget range">
+    <h3>Type of Employment</h3>
+    <ul>
+    <li><a href="post-job.html">Full Time Jobs <span>10</span></a></li>
+    <li><a href="post-job.html">Part Time Jobs <span>23</span></a></li>
+    <li><a href="post-job.html">Remote Jobs <span>14</span></a></li>
+    <li><a href="post-job.html">Internship <span>33</span></a></li>
+    <li><a href="post-job.html">Contract <span>56</span></a></li>
+    </ul>
+    </div>
+    <div class="single-sidebar-widget range">
+    <h3>Seniority Level</h3>
+    <ul>
+    <li><a href="post-job.html">Student Level <span>10</span></a></li>
+    <li><a href="post-job.html">Entry Level <span>23</span></a></li>
+    <li><a href="post-job.html">Mid Level <span>14</span></a></li>
+    <li><a href="post-job.html">Senior level <span>33</span></a></li>
+    <li><a href="post-job.html">Directors <span>56</span></a></li>
+    </ul>
+    </div>
+    <div class="single-sidebar-widget range">
+    <h3>Salary Range</h3>
+    <ul>
+    <li><a href="post-job.html">$1200 - $1400 <span>10</span></a></li>
+    <li><a href="post-job.html">$400 - $600 <span>23</span></a></li>
+    <li><a href="post-job.html">$1000 - $1200 <span>14</span></a></li>
+    <li><a href="post-job.html">$800 - $1000 <span>33</span></a></li>
+    <li><a href="post-job.html">$600 - $800 <span>56</span></a></li>
+    </ul>
+     </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+
+
+
+
+
+
+{% endblock %}

@@ -26,25 +26,25 @@
     </div>
     <div class="col-lg-3 col-sm-6">
     <div class="single-footer-widget quick-link">
-    <h3>For Employer</h3>
+    <h3>Our Services</h3>
     <ul>
-    <li><a href="candidates.html">Browse Candidates</a></li>
-    <li><a href="employers.html">Employers Dashboard</a></li>
-    <li><a href="packages.html">Job Packages</a></li>
-    <li><a href="manage-jobs.html">Jobs Featured</a></li>
-    <li><a href="post-job.html">Post A Job</a></li>
+
+        {% for item in services_obj %}
+    <li><a href="{% url 'frontend:service-details' item.slug %}">{{item.title}}</a></li>
+
+    {% endfor %}
+   
     </ul>
     </div>
     </div>
     <div class="col-lg-2 col-sm-6">
     <div class="single-footer-widget quick-link">
-    <h3>Company</h3>
+    <h3>Important Link</h3>
     <ul>
-    <li><a href="about-us.html">About Us</a></li>
-    <li><a href="contact.html">Contact Us</a></li>
-    <li><a href="terms-conditions.html">Terms & Conditions</a></li>
-    <li><a href="privacy-policy.html">Privacy Policy</a></li>
-    <li><a href="candidates.html">Candidate Listing</a></li>
+    <li><a href="{% url 'jobapp:jobs' %}">Find Jobs</a></li>
+    <li><a href="{% url 'contact-us:contactus' %}">Contact Us</a></li>
+    <li><a href="{% url 'frontend:aboutpage' %}">About Us</a></li>
+    <li><a href="{% url 'blogs:blogs' %}">Blogs</a></li>
     </ul>
     </div>
     </div>
@@ -55,17 +55,17 @@
     <li>
     <i class="fa-solid fa-location-dot"></i>
     <h4>Location:</h4>
-    <span>2976 sunrise road las vegas</span>
+    <span>SHANKARDASS HOUSE 2ND FLOOR</span>
     </li>
     <li>
     <i class="fa-solid fa-envelope"></i>
     <h4>Email:</h4>
-    <a href="https://templates.hibootstrap.com/cdn-cgi/l/email-protection#a5cdc0c9c9cae5cfc4c7c48bc6cac8"><span class="__cf_email__" data-cfemail="85ede0e9e9eac5efe4e7e4abe6eae8">[email&#160;protected]</span></a>
+    <a >jobs@careerventures.co.ke</span></a>
     </li>
     <li>
     <i class="fa-solid fa-phone"></i>
     <h4>Phone:</h4>
-    <a href="tel:098765432150">098765432150</a>
+    <a href="tel:0782434348">0782434348</a>
     </li>
     </ul>
     </div>

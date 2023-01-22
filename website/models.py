@@ -17,6 +17,15 @@ class Mainlogo(models.Model):
         return self.title
 
 
+class Jobphoto(models.Model):
+    title=models.CharField(max_length=100)
+    job_image = models.ImageField(upload_to="jobad", help_text="1920x801 px image for fit background")
+    status=models.BooleanField(default=True)
+
+    def __str__(self):
+        return self.title
+
+
 class Slider(models.Model):
     title=models.CharField(max_length=100)
     slider_image = models.ImageField(upload_to="logo", help_text="1920x801 px image for fit background")

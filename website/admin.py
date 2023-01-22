@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from website.models import About, Mainlogo, Offer, Service, Slider
+from website.models import About, Jobphoto, Mainlogo, Offer, Service, Slider
 
 # Register your models here.
 
@@ -29,3 +29,4 @@ admin.site.register(About,AboutAdmin)
 admin.site.register(Service,ServiceAdmin)
 admin.site.register(Offer,OfferAdmin)
 admin.site.register(Slider,SliderAdmin)
+admin.site.register(Jobphoto)

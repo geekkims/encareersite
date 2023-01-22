@@ -34,6 +34,7 @@ INSTALLED_APPS = [
     'blogs',
     # 'debug_toolbar',
     'django.contrib.humanize',
+    'contactus'
 
 
 ]

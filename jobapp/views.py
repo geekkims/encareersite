@@ -1,7 +1,7 @@
 from django.shortcuts import render
 import jobapp
 from jobapp.models import Job
-from website.models import Mainlogo, Service
+from website.models import Jobphoto, Mainlogo, Service
 from django.views.generic import CreateView, DetailView, ListView
 from django.http import Http404, HttpResponseRedirect, JsonResponse, HttpResponseNotAllowed
 
@@ -10,35 +10,39 @@ from django.http import Http404, HttpResponseRedirect, JsonResponse, HttpRespons
 def index(request):
     logo_obj= Mainlogo.objects.last() 
     job_obj=Job.objects.filter(is_closed=False)
-    
+    photo=Jobphoto.objects.last()
+    services_obj=Service.objects.filter(status=True)
+
 
     context={
 
         "logo_obj":logo_obj,
         "job_obj":job_obj,
+        "photo":photo,
+        "services_obj":services_obj,
 
     }
-    return render(request,'jobapp/jobs.html',context)
+    return render(request,'front-end/jobs/index.html',context)
 
 
 def JobDetails(request,slug):
     logo_obj= Mainlogo.objects.last() 
-    job=Job.objects.get(slug=slug)
-
-
-    
-
+    single_job=Job.objects.get(slug=slug)
+    services_obj=Service.objects.filter(status=True)
+    photo=Jobphoto.objects.last()
 
     context={
 
         'logo_obj':logo_obj,
-        'job':job,
+        'single_job':single_job,
+        "services_obj":services_obj,
+        "photo":photo,
 
     }
 
 
 
-    return render(request,'jobs/details.html',context)
+    return render(request,'front-end/jobs/detail.html',context)
 
 
 

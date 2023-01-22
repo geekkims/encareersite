@@ -1,0 +1,155 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block content %}
+
+
+<div class="page-banner-area bg-f0f4fc">
+  <div class="container">
+  <div class="page-banner-content">
+  <h1>Contact Us</h1>
+  <ul>
+  <li><a href="{% url 'frontend:homepage' %}">Home</a></li>
+  <li>Contact Us</li>
+  </ul>
+  </div>
+  </div>
+  </div>
+  
+
+
+<div class="container">
+
+    <div class="row">
+
+<div class="col-6">
+
+    <div class="contact-us-area pt-100 pb-70">
+        <div class="container">
+        <div class="row">
+        <div class="col-lg-12">
+        <div class="single-contact-info-box">
+        <div class="info-content">
+        <div class="icon">
+        <i class="fa-solid fa-location-dot"></i>
+        </div>
+         <h3>Our location</h3>
+        <span>SHANKARDASS HOUSE 2ND FLOOR</span>
+        </div>
+        </div>
+        <div class="single-contact-info-box">
+        <div class="info-content">
+        <div class="icon">
+        <i class="fa-solid fa-envelope"></i>
+        </div>
+        <h3>Email Us</h3>
+        <a ><span class="__cf_email__" data-cfemail="ee868b828281ae89838f8782c08d8183">jobs@careerventures.co.ke</span></a>
+        <a href="https://templates.hibootstrap.com/cdn-cgi/l/email-protection#2660475e66414b474f4a0845494b"><span class="__cf_email__" data-cfemail="6a2c0b122a0d070b030644090507">jobs@careerventures.co.ke</span></a>
+        </div>
+        </div>
+        <div class="single-contact-info-box">
+        <div class="info-content">
+        <div class="icon">
+        <i class="fa-solid fa-envelope"></i>
+        </div>
+        <h3>Phone</h3>
+        <a href="tel:+44587154756">0782434348</a>
+       
+        </div>
+        </div>
+        </div>
+     
+        </div>
+        </div>
+        </div>
+        
+
+
+
+</div>
+
+
+    <div class="col-6">
+    
+    <div class="contact-form-area pb-100">
+    <div class="container">
+    <div class="section-title">
+    <span>SEND MESSAGE</span>
+    <h2>Ready To Get Started?</h2>
+    </div>
+    <div class="contact-form">
+
+        {% if messages %}
+                                <div class="alert alert-{% for message in messages %}{{ message.tags }}{% endfor %} alert-dismissible fade show" role="alert">
+                                    <ul class="messages">
+                                        {% for message in messages %}                                    
+                                            <li class="{{ message.tags }}"><strong>{{ message }}</strong></li>
+                                        {% endfor %}
+                                    </ul>
+                                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>   
+                                </div>   
+                            {% endif %} 
+                            <form action="{% url 'contact-us:contactus' %}" method="POST" class="needs-validation">
+                                {% csrf_token %}
+                                <div class="form-row">
+                                    <div class="form-group  col-lg-6 col-sm-6">
+                                      <label for="first_name">First Name</label>
+                                      <input type="text" class="form-control" id="first_name" name="first_name" required>
+                                      <div class="invalid-tooltip">
+                                        Please provide First Name.
+                                      </div>
+                                    </div>
+                                    <div class="form-group  col-lg-6 col-sm-6">
+                                      <label for="last_name">Last Name</label>
+                                      <input type="text" class="form-control" id="last_name" name="last_name" required>
+                                      <div class="invalid-tooltip">
+                                        Please provide Last Name.
+                                      </div>
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-group  col-lg-6 col-sm-6">
+                                      <label for="phone_number">Phone Number</label>
+                                      <input type="text" class="form-control" id="phone_number" name="phone_number" required>
+                                      <div class="invalid-tooltip">
+                                        Please provide Phone Number.
+                                      </div>
+                                    </div>
+                                    <div class="form-group  col-lg-6 col-sm-6">
+                                      <label for="email_address">Email Address</label>
+                                      <input type="email" class="form-control" id="email_address" name="email_address" required>
+                                    </div>
+                                </div>
+                                <div class="form-group ">
+                                    <label for="message">Your Message</label>
+                                    <textarea class="form-control" id="message" rows="3" name="message" required></textarea>
+                                </div>
+                                <div class="form-group  d-flex justify-content-center">
+                                    <button type="submit" class="btn btn-success">Contact Us</button>
+                                </div>
+                            </form>
+
+      
+
+
+
+  
+    </div>
+    </div>
+    </div>
+
+</div>
+</div>
+    
+
+</div>
+
+
+
+
+
+
+{% endblock %}
