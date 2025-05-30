@@ -5,17 +5,25 @@ from django.contrib.messages import constants as messages
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-
-
-
 SECRET_KEY = 'django-insecure-6$!g=v&_m9b66&z+xx3k7frh8eo8ee4&6(_!suj07t1tg%l=9&'
 
-DEBUG = True
+# Set DEBUG based on environment - for production set to False
+DEBUG = False  # Change to False for production
 
-ALLOWED_HOSTS = ['*']
+# ALLOWED_HOSTS for both development and production
+ALLOWED_HOSTS = ['careerventures.co.ke', 'www.careerventures.co.ke', '127.0.0.1', 'localhost', '0.0.0.0']
 
-
-
+# HTTPS settings - only apply in production (when DEBUG=False)
+if not DEBUG:
+    SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+    SECURE_SSL_REDIRECT = True
+    SESSION_COOKIE_SECURE = True
+    CSRF_COOKIE_SECURE = True
+    SECURE_BROWSER_XSS_FILTER = True
+    SECURE_CONTENT_TYPE_NOSNIFF = True
+    SECURE_HSTS_SECONDS = 31536000
+    SECURE_HSTS_INCLUDE_SUBDOMAINS = True
+    SECURE_HSTS_PRELOAD = True
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -32,16 +40,12 @@ INSTALLED_APPS = [
     'user_visit',
     'jobapp',
     'blogs',
-    # 'debug_toolbar',
+    # 'debug_toolbar',  # Uncomment for development debugging
     'django.contrib.humanize',
     'contactus'
-
-
 ]
 
-
-CKEDITOR_UPLOAD_PATH="uploads/"   
-
+CKEDITOR_UPLOAD_PATH = "uploads/"   
 
 ORDERABLE_MODELS = {
     'auth.User': ('home', 'users'),
@@ -56,10 +60,7 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'user_visit.middleware.UserVisitMiddleware', 
-    
-    # 'debug_toolbar.middleware.DebugToolbarMiddleware',
-
-
+    # 'debug_toolbar.middleware.DebugToolbarMiddleware',  # Uncomment for development debugging
 ]
 
 ROOT_URLCONF = 'core.urls'
@@ -67,7 +68,7 @@ ROOT_URLCONF = 'core.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR,"templates")],
+        'DIRS': [os.path.join(BASE_DIR, "templates")],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -75,7 +76,6 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
-                
             ],
         },
     },
@@ -84,29 +84,19 @@ TEMPLATES = [
 WSGI_APPLICATION = 'core.wsgi.application'
 
 # CKEDITOR custom config
-
 CKEDITOR_CONFIGS = {
     'default': {
         'width': '100%',
         'tabSpaces': 4,
-
     }
 }
 
-
-
-#for debug toolbar
+# For debug toolbar (only in development)
 INTERNAL_IPS = [
-    # ...
     "127.0.0.1",
-    # ...
 ]
 
-
-
 # Database
-# https://docs.djangoproject.com/en/4.1/ref/settings/#databases
-
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
@@ -114,10 +104,7 @@ DATABASES = {
     }
 }
 
-
 # Password validation
-# https://docs.djangoproject.com/en/4.1/ref/settings/#auth-password-validators
-
 AUTH_PASSWORD_VALIDATORS = [
     {
         'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',
@@ -133,39 +120,32 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-
 # Internationalization
-# https://docs.djangoproject.com/en/4.1/topics/i18n/
-
 LANGUAGE_CODE = 'en-us'
-
 TIME_ZONE = 'Africa/Nairobi'
-
 USE_I18N = True
-
 USE_TZ = True
 
-
 # Static files (CSS, JavaScript, Images)
-# https://docs.djangoproject.com/en/4.1/howto/static-files/
+STATIC_URL = '/static/'
 
-STATIC_URL = 'static/'
+# Static files configuration - FIXED for production
+# Always include STATICFILES_DIRS so Django can find your static/assets/ folder
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'static'),
+]
 
-if DEBUG:
-        STATICFILES_DIRS = [
-            os.path.join(BASE_DIR, 'static')
-       ]
-else:
-    STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+# Production: Use STATIC_ROOT for collected static files
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
+# Media files configuration
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
 
 # Default primary key field type
-# https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
-
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
+# Message tags for Bootstrap styling
 MESSAGE_TAGS = {
     messages.DEBUG: 'alert-info',
     messages.INFO: 'alert-info',
@@ -174,11 +154,31 @@ MESSAGE_TAGS = {
     messages.ERROR: 'alert-danger',
 }
 
-
-# Email Stuff
+# Email configuration
 EMAIL_HOST = 'mail.techspace.co.ke'
 EMAIL_HOST_USER = 'info@techspace.co.ke'
 EMAIL_USE_TLS = True
-DEFAULT_FROM_EMAIL='info@techspace.co.ke'
+DEFAULT_FROM_EMAIL = 'info@techspace.co.ke'
 EMAIL_PORT = 587
 EMAIL_HOST_PASSWORD = 'P@$$w0rd.2016'
+
+# Logging configuration (optional but recommended for production)
+if not DEBUG:
+    LOGGING = {
+        'version': 1,
+        'disable_existing_loggers': False,
+        'handlers': {
+            'file': {
+                'level': 'ERROR',
+                'class': 'logging.FileHandler',
+                'filename': os.path.join(BASE_DIR, 'django_errors.log'),
+            },
+        },
+        'loggers': {
+            'django': {
+                'handlers': ['file'],
+                'level': 'ERROR',
+                'propagate': True,
+            },
+        },
+    }
